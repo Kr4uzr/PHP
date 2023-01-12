@@ -56,7 +56,7 @@ function carregarTabela(){
         }
     });
 
-    //função para ordenar data no formato brasileiro
+    //extend para ordenar data no formato brasileiro
     jQuery.extend(jQuery.fn.dataTableExt.oSort, {
         "date-br-pre": function ( a ) {
             if (a == null || a == "") {
