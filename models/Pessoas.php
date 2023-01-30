@@ -6,12 +6,12 @@ use PDO;
 use PDOException;
 
 //constantes para conexão com o banco de dados
-CONST Server = 'mysql';
-CONST Host = '107.180.57.185';
-CONST Db = 'dz_dev_test';
-CONST User = 'dz_dev';
+CONST Server = '';
+CONST Host = '';
+CONST Db = '';
+CONST User = '';
 CONST Port = '';
-CONST Password = 'p?%3DY?#*LBW';
+CONST Password = '';
 
 class Pessoas {
 
@@ -33,10 +33,7 @@ class Pessoas {
 			//conecta no banco
 			$conexao = $this->conectarBanco();
 			//cria a query
-			$query = "SELECT pessoa.nome, pessoa.sexo, pessoa.cpf, pessoa.nascimento, pessoa.email, pessoa.celular, prof.nome AS profissao
-					  FROM dz_dev_test.pessoas AS pessoa
-					  LEFT JOIN dz_dev_test.profissoes AS prof ON pessoa.profissao_id = prof.id
-					  WHERE pessoa.sexo = 'Feminino' AND YEAR(FROM_DAYS(TO_DAYS(NOW())-TO_DAYS(pessoa.nascimento))) > 20;";
+			$query = "SELECT * FROM 'bancoDeDados' WHERE 1=1;";
 			
 			//prepara e executa a query
 			$busca = $conexao->prepare($query);
